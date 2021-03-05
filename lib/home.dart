@@ -50,20 +50,16 @@ class _HomePageState extends State<HomePage> {
         onPressed: () => setState(() => _headline = 'DashBoard'),
         isSelected: true,
       ),
+
       CollapsibleItem(
-        text: 'Notifications',
-        icon: Icons.notifications,
-        onPressed: () => setState(() => _headline = 'Notifications'),
-      ),
-      CollapsibleItem(
-        text: 'Settings',
-        icon: Icons.settings,
+        text: 'Profile',
+        icon: Icons.person,
         onPressed: () => setState(() => _headline = 'Settings'),
       ),
       CollapsibleItem(
-        text: 'Home',
-        icon: Icons.home,
-        onPressed: () => setState(() => _headline = 'Home'),
+        text: 'Log Out',
+        icon: Icons.logout,
+        onPressed:()=> _body(context),
       ),
 
     ];
@@ -83,6 +79,9 @@ class _HomePageState extends State<HomePage> {
               height: double.infinity,
               body: _body(context),
               backgroundColor: Colors.white,
+              unselectedIconColor: Colors.green,
+              selectedIconColor: Colors.white,
+              selectedIconBox: Colors.green,
               textStyle: TextStyle(
                   decoration: TextDecoration.none,
                   fontSize: 15, fontFamily: 'Montserrat',
@@ -102,8 +101,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _body( BuildContext context) {
-    return Scaffold(
+    return new Scaffold();
 
-    );
   }
+
+
 }
