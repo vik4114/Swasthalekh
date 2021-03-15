@@ -51,11 +51,7 @@ class _HomePageState extends State<HomePage> {
         isSelected: true,
       ),
 
-      CollapsibleItem(
-        text: 'Profile',
-        icon: Icons.person,
-        onPressed: () => setState(() => _headline = 'Settings'),
-      ),
+
       CollapsibleItem(
         text: 'Log Out',
         icon: Icons.logout,
@@ -101,7 +97,97 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _body( BuildContext context) {
-    return new Scaffold();
+    return new Scaffold(
+        resizeToAvoidBottomPadding: false,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.fromLTRB(12.0, 110.0, 0.0, 0.0),
+                    child: Text('Hello',
+                        style: TextStyle(
+                            fontSize: 70.0, fontWeight: FontWeight.bold)),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(13.0, 175.0, 0.0, 0.0),
+                    child: Text('There',
+                        style: TextStyle(
+                            fontSize: 70.0, fontWeight: FontWeight.bold)),
+                  ),
+                  Container(
+                  padding: EdgeInsets.fromLTRB(193.0, 175.0, 0.0, 0.0),
+                  child: Text('.',
+                  style: TextStyle(
+                  fontSize: 70.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green)),
+                  )
+
+                ],
+
+              ),
+            ),
+            Container(
+                padding: EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
+                child: Column(
+                  children: <Widget>[
+
+                    SizedBox(height: 40.0),
+                    Container(
+                      height: 50.0,
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20.0),
+                        shadowColor: Colors.greenAccent,
+                        color: Colors.green,
+                        elevation: 7.0,
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Center(
+                            child: Text(
+                              'SCAN',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat'),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 50.0),
+                    Container(
+                      height: 50.0,
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20.0),
+                        shadowColor: Colors.greenAccent,
+                        color: Colors.green,
+                        elevation: 7.0,
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Center(
+                            child: Text(
+                              'SHOW',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat'),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 40.0),
+
+                  ],
+                )),
+            SizedBox(height: 15.0),
+
+          ],
+        ));
+
 
   }
 
