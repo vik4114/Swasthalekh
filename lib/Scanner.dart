@@ -1,16 +1,14 @@
 import 'dart:io';
-
-import 'package:file_picker/file_picker.dart';
+import 'package:intl/intl.dart';
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-import 'package:pdf/widgets.dart' as pw;
-import 'package:path/path.dart' as path;
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:images_to_pdf/images_to_pdf.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:printing/printing.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:swasthalekh/home.dart';
+
+
 
 class Scanner extends StatefulWidget {
   @override
@@ -18,115 +16,99 @@ class Scanner extends StatefulWidget {
 }
 
 class _ScannerState extends State<Scanner> {
-  File _pdfFile;
-  String _status = "Not created";
-  FileStat _pdfStat;
-  bool _generating = false;
-  List<File> files;
-
-  String fileName = '';
-  Future filepicker(BuildContext context) async {
-    try {
-       files = await FilePicker.getMultiFile();
-    } on PlatformException catch (e) {
-      showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text('Sorry...'),
-              content: Text('Unsupported exception: $e'),
-              actions: <Widget>[
-                FlatButton(
-                  child: Text('OK'),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                )
-              ],
-            );
-          });
-    }
-    await _createPdf();
-  }
-
-  Future<void> _createPdf() async {
-    try {
-      final doc = pw.Document();
-      this.setState(() => _generating = true);
-      final tempDir = await getApplicationDocumentsDirectory();
-      final output = File(path.join(tempDir.path, 'example.pdf'));
-
-      print('file name' '$output');
-
-      this.setState(() => _status = 'Preparing images...');
-
-      final images1 = await files;
-      print(images1);
-      this.setState(() => _status = 'Generating PDF');
-      await ImagesToPdf.createPdf(
-        pages: images1
-            .map(
-              (file) => PdfPage(
-                imageFile: file,
-                size: Size(1920, 1080),
-                compressionQuality: 0.5,
-              ),
-            )
-            .toList(),
-        output: output,
-      );
-      _pdfStat = await output.stat();
-      output.writeAsBytesSync(doc.save());
-      this.setState(() {
-        _pdfFile = output;
-        _status = 'PDF Generated (${_pdfStat.size ~/ 1024}kb)';
-      });
-    } catch (e) {
-      this.setState(() => _status = 'Failed to generate pdf: $e".');
-      print('$e');
-    } finally {
-      this.setState(() => _generating = false);
-    }
-  }
-
-  Future<void> _openPdf() async {
-    if (_pdfFile != null) {
-      try {
-        final bytes = await _pdfFile.readAsBytes();
-        await Printing.sharePdf(
-            bytes: bytes, filename: path.basename(_pdfFile.path));
-      } catch (e) {
-        _status = 'Failed to open pdf: $e".';
-      }
-    }
-  }
+  final picker = ImagePicker();
+  final pdf = pw.Document();
+  List<File> _image = [];
 
   @override
   Widget build(BuildContext context) {
-    final isLoading = _generating;
     return Scaffold(
       appBar: AppBar(
-        title: Text(_status),
-      ),
-      body: Column(
-        children: <Widget>[
-          if (isLoading) CircularProgressIndicator(),
-          if (!isLoading) ...[
-            if (_pdfFile == null)
-              RaisedButton(
-                child: Text("Generate PDF"),
-                onPressed: () {
-                  filepicker(context);
-                },
-              ),
-            if (_pdfFile != null)
-              RaisedButton(
-                child: Text("Open PDF"),
-                onPressed: _openPdf,
-              ),
-          ]
+        backgroundColor: Colors.green,
+        title: Text("Scan",style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Montserrat'),),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.picture_as_pdf),
+              onPressed: () {
+                DateTime now = DateTime.now();
+                String formattedDate = DateFormat('d MMM y kk:mm:ss').format(now);
+                createPDF();
+                savePDF(formattedDate);
+              })
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
+        child: Icon(Icons.add, ),
+        onPressed: getImageFromGallery,
+      ),
+      body: _image != null
+          ? ListView.builder(
+        itemCount: _image.length,
+        itemBuilder: (context, index) => Container(
+            height: 400,
+            width: double.infinity,
+            margin: EdgeInsets.all(8),
+            child: Image.file(
+              _image[index],
+              fit: BoxFit.cover,
+            )),
+      )
+          : Container(),
     );
+  }
+
+  getImageFromGallery() async {
+    final pickedFile = await picker.getImage(source: ImageSource.camera);
+    setState(() {
+      if (pickedFile != null) {
+        _image.add(File(pickedFile.path));
+      } else {
+        print('No image selected');
+      }
+    });
+  }
+
+  createPDF() async {
+    for (var img in _image) {
+      final image = pw.MemoryImage(img.readAsBytesSync());
+
+      pdf.addPage(pw.Page(
+          pageFormat: PdfPageFormat.a4,
+          build: (pw.Context contex) {
+            return pw.Center(child: pw.Image(image));
+          }));
+    }
+  }
+
+  savePDF(String formattedDate) async {
+    try {
+      final dir = await getExternalStorageDirectory();
+      final file = File('${dir.path}/$formattedDate.pdf');
+      await file.writeAsBytes(await pdf.save());
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+      showPrintedMessage('Success', 'Saved to documents');
+
+    } catch (e) {
+      showPrintedMessage('error', e.toString());
+    }
+  }
+
+  showPrintedMessage(String title, String msg) {
+    Flushbar(
+      title: title,
+      message: msg,
+      duration: Duration(seconds: 3),
+      icon: Icon(
+        Icons.info,
+        color: Colors.green,
+      ),
+    )..show(context);
   }
 }

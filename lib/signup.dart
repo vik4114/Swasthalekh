@@ -1,7 +1,13 @@
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/services.dart';
 import 'package:swasthalekh/home.dart';
+import 'package:http/http.dart' as http;
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'dart:convert';
+
+import 'package:swasthalekh/main.dart';
 
 
 
@@ -17,6 +23,61 @@ class _SignupPageState extends State<SignupPage> {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp
     ]);
+  }
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+  final TextEditingController _name = TextEditingController();
+  final TextEditingController _pnumber = TextEditingController();
+
+
+  String dob;
+  signUp() async {
+    String url = "https://gerf8iqdzg.execute-api.ap-south-1.amazonaws.com/production/users/signup";
+
+
+    var bod = {
+
+        'email': _email.text,
+        'password': _password.text,
+        'phone': _pnumber.text,
+         'name' : _name.text,
+          'dob' : dob,
+    };
+    String bo = json.encode(bod);
+
+    print(bo);
+    var jsonResponse;
+    var res = await http.post(url, body: bo);
+    print(res.body);
+    try {
+      if (res.statusCode == 200) {
+        if(res.body.isNotEmpty) {
+          json.decode(res.body);
+        }
+        print("Response Status: ${res.statusCode}");
+
+        print("Response body: ${res.body}");
+
+        if (res != null) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MyApp()),
+          );
+          showPrintedMessage('Success', 'Please Log in');
+        }
+      } else {
+        print("2");
+        print("Response Status: ${res.statusCode}");
+        print("Response body: ${res.body}");
+        showPrintedMessage('Failed', 'Email Id Password Already present');
+
+      }
+    }
+    catch(e){
+      print (e);
+      showPrintedMessage('Failed', 'Something went Wrong Try Again');
+
+    }
   }
 
 
@@ -75,6 +136,7 @@ class _SignupPageState extends State<SignupPage> {
               child: Column(
                 children: <Widget>[
                   TextField(
+                    controller: _email,
                     decoration: InputDecoration(
                         labelText: 'EMAIL',
                         labelStyle: TextStyle(
@@ -88,6 +150,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   SizedBox(height: 10.0),
                   TextField(
+                    controller: _password,
                     decoration: InputDecoration(
                         labelText: 'PASSWORD ',
                         labelStyle: TextStyle(
@@ -100,6 +163,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   SizedBox(height: 10.0),
                   TextField(
+                    controller: _name,
                     decoration: InputDecoration(
                         labelText: 'NAME',
                         labelStyle: TextStyle(
@@ -148,6 +212,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   SizedBox(height: 10.0),
                   TextField(
+                    controller: _pnumber,
                     decoration: InputDecoration(
                         labelText: 'PHONE NO. ',
                         labelStyle: TextStyle(
@@ -167,10 +232,22 @@ class _SignupPageState extends State<SignupPage> {
                         elevation: 7.0,
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => HomePage()),
-                            );
+                            String day = DateFormat('dd').format(currentDate);
+                            String mon = DateFormat('mm').format(currentDate);
+                            String yea = DateFormat('y').format(currentDate);
+                            dob = day+'-'+mon+'-'+yea ;
+                            print(dob);
+
+                            if(_email.text!=''&&_password.text!=''&&_name!=''&&_pnumber!='')
+                              {
+                                signUp();
+                              }
+                            else
+                              {
+                                showPrintedMessage('Error', 'Please fill all details');
+                              }
+
+
                           },
                           child: Center(
                             child: Text(
@@ -216,5 +293,16 @@ class _SignupPageState extends State<SignupPage> {
               )),
 
         ]));
+  }
+  showPrintedMessage(String title, String msg) {
+    Flushbar(
+      title: title,
+      message: msg,
+      duration: Duration(seconds: 3),
+      icon: Icon(
+        Icons.info,
+        color: Colors.green,
+      ),
+    )..show(context);
   }
 }

@@ -1,17 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
-import 'dart:math' as math show pi;
+
+import 'package:swasthalekh/Scanner.dart';
+import 'package:swasthalekh/form.dart';
+import 'package:swasthalekh/main.dart';
 
 
 
 class HomePage extends StatefulWidget {
+  final pasname;
+  final pasphone;
+  HomePage({Key key, @required this.pasname,this.pasphone,}) : super(key: key);
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState(
+    pasname: pasname,
+    pasphone:pasphone,
+  );
 
 }
 
 class _HomePageState extends State<HomePage> {
+  final pasname;
+  final pasphone;
+  _HomePageState({Key key , @required this.pasname,this.pasphone});
+
   @override
   void initState(){
     _items = _generateItems;
@@ -55,7 +68,12 @@ class _HomePageState extends State<HomePage> {
       CollapsibleItem(
         text: 'Log Out',
         icon: Icons.logout,
-        onPressed:()=> _body(context),
+        onPressed:(){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MyApp()),
+          );
+        },
       ),
 
     ];
@@ -71,7 +89,7 @@ class _HomePageState extends State<HomePage> {
             child: CollapsibleSidebar(
               items: _items,
               avatarImg: _avatarImg,
-              title: 'John Smith',
+              title: pasname,
               height: double.infinity,
               body: _body(context),
               backgroundColor: Colors.white,
@@ -144,7 +162,12 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.green,
                         elevation: 7.0,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => FormPage()),
+                            );
+                          },
                           child: Center(
                             child: Text(
                               'SCAN',
@@ -166,7 +189,10 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.green,
                         elevation: 7.0,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            print(pasphone);
+                            print(pasname);
+                          },
                           child: Center(
                             child: Text(
                               'SHOW',

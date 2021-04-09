@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:convert';
 
-
+import 'package:http/http.dart' as http;
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:swasthalekh/home.dart';
 
 import 'signup.dart';
 
@@ -26,6 +29,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
   @override
     void initState(){
       super.initState();
@@ -33,6 +39,68 @@ class _MyHomePageState extends State<MyHomePage> {
         DeviceOrientation.portraitUp
       ]);
     }
+
+  var alertStyle = AlertStyle(
+    animationType: AnimationType.fromTop,
+    isCloseButton: true,
+    isButtonVisible: false ,
+    isOverlayTapDismiss: true,
+    animationDuration: Duration(milliseconds: 400),
+    backgroundColor: Colors.lightGreen,
+    alertBorder: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(20),
+      side: BorderSide(
+        width: 4,
+        color: Colors.black54,
+      ),
+    ),
+    titleStyle: TextStyle(
+        fontFamily: 'Montserrat',
+        fontWeight: FontWeight.bold,
+        color: Colors.black54
+    ),
+  );
+
+  login() async {
+    String url = "https://gerf8iqdzg.execute-api.ap-south-1.amazonaws.com/production/users/login";
+
+
+    var bod = {
+
+      'email': _email.text,
+      'password': _password.text,
+    };
+    String bo = json.encode(bod);
+    final pasname = new TextEditingController();
+    final pasphone = new TextEditingController();
+
+    print(bo);
+    var jsonResponse;
+    var res = await http.post(url, body: bo);
+    print(res.body);
+    try {
+      if (res.statusCode == 200) {
+
+        Map<String, dynamic> map=json.decode(res.body);
+        pasname.text=map['name'];
+        pasphone.text=map['phone'];
+
+        print("Response Status: ${res.statusCode}");
+        if (map['result']=="true") {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(pasname: pasname.text,pasphone: pasphone.text,),));
+        }
+      } else {
+        print("2");
+        print("Response Status: ${res.statusCode}");
+        print("Response body: ${res.body}");
+        Alert(context: context, title: "Email Id Password Doesn't match",style: alertStyle ).show();
+      }
+    }
+    catch(e){
+      print (e);
+      Alert(context: context, title: "Something went Wrong Try Again ",style: alertStyle).show();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                   children: <Widget>[
                     TextField(
+                      controller: _email,
                       decoration: InputDecoration(
                           labelText: 'EMAIL',
                           labelStyle: TextStyle(
@@ -70,6 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     SizedBox(height: 20.0),
                     TextField(
+                      controller: _password,
                       decoration: InputDecoration(
                           labelText: 'PASSWORD',
                           labelStyle: TextStyle(
@@ -104,7 +174,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Colors.green,
                         elevation: 7.0,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            if(_email.text!=''&&_password.text!='')
+                            {
+                              login();
+                            }
+                            else
+                            {
+                              Alert(context: context, title: "Please fill all details",style: alertStyle ).show();
+                            }
+
+                          },
                           child: Center(
                             child: Text(
                               'LOGIN',

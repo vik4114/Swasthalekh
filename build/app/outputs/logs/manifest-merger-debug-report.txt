@@ -5,11 +5,9 @@ INJECTED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\m
 INJECTED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\main\AndroidManifest.xml:1:1-47:12
 INJECTED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\main\AndroidManifest.xml:1:1-47:12
 MERGED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\main\AndroidManifest.xml:1:1-47:12
-MERGED from [:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-22:12
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:images_to_pdf] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\images_to_pdf\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-19:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\0986d0d74b8a2c7da8161f6370fc7744\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\28d99d5113324aa067757f8ca41a426f\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\e1bbce6b0d79e8479b70e7bd729bb743\loader-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -20,6 +18,7 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\bhvik\.gradle\
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\54d8b8735f730e83f07925f758092af3\savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\23edc849475fdda61367cb003f9b9f93\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\79f9d65ef8b1c716310f666473a689a7\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\ef3e70141ce80265c385477b65c4f7e8\exifinterface-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\077300052aa327ee6fc9bbb0ce309b24\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\3a7eb299570065a3866b140e1a95969b\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\b80fad55c42c418cc210e235056767fb\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
@@ -42,8 +41,8 @@ INJECTED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\d
 		ADDED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\main\AndroidManifest.xml:1:11-69
 application
 ADDED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\main\AndroidManifest.xml:8:5-46:19
-MERGED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
-MERGED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
+MERGED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-20:19
+MERGED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-20:19
 MERGED from [androidx.core:core:1.1.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\a528b13ac93e64cafa3d0480e2c93207\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\a528b13ac93e64cafa3d0480e2c93207\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\3a7eb299570065a3866b140e1a95969b\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
@@ -102,16 +101,12 @@ uses-sdk
 INJECTED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\main\AndroidManifest.xml
-MERGED from [:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:images_to_pdf] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\images_to_pdf\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:images_to_pdf] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\images_to_pdf\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\0986d0d74b8a2c7da8161f6370fc7744\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\0986d0d74b8a2c7da8161f6370fc7744\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\28d99d5113324aa067757f8ca41a426f\viewpager-1.0.0\AndroidManifest.xml:20:5-44
@@ -132,6 +127,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\bhvik\.gradle
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\23edc849475fdda61367cb003f9b9f93\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\79f9d65ef8b1c716310f666473a689a7\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\79f9d65ef8b1c716310f666473a689a7\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\ef3e70141ce80265c385477b65c4f7e8\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\ef3e70141ce80265c385477b65c4f7e8\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\077300052aa327ee6fc9bbb0ce309b24\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\077300052aa327ee6fc9bbb0ce309b24\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\bhvik\.gradle\caches\transforms-2\files-2.1\3a7eb299570065a3866b140e1a95969b\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -151,34 +148,26 @@ ADDED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\debu
 	android:name
 		ADDED from C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\debug\AndroidManifest.xml:6:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from [:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from [:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
-queries
-ADDED from [:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-15:15
-intent
-ADDED from [:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-14:18
-action#android.intent.action.GET_CONTENT
-ADDED from [:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-72
+		ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from [:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:21-69
-data
-ADDED from [:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-44
-	android:mimeType
-		ADDED from [:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-41
-provider#net.nfet.flutter.printing.PrintFileProvider
-ADDED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+		ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
+provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
+ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
 	android:grantUriPermissions
-		ADDED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+		ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
 	android:authorities
-		ADDED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-68
+		ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
 	android:exported
-		ADDED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+		ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
 	android:name
-		ADDED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-71
+		ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:71
+ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
 	android:resource
-		ADDED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-68
+		ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
 	android:name
-		ADDED from [:printing] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\printing\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+		ADDED from [:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67

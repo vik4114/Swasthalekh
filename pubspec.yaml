@@ -2,7 +2,7 @@ name: swasthalekh
 description: A new Flutter application.
 
 environment:
-  sdk: ">=2.2.2-dev.68.0 <3.0.0"
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -13,11 +13,13 @@ dependencies:
   cupertino_icons: ^0.1.2
   intl: ^0.16.1
   collapsible_sidebar: ^1.0.7+2
-  file_picker: ^2.1.7
   pdf: ^2.1.0
-  path_provider: ^1.6.5
-  printing: ^4.1.0
-  images_to_pdf: ^0.0.1
+  image_picker: ^0.6.7+21
+  flushbar: ^1.10.4
+  path_provider: ^1.6.27
+  http:
+  rflutter_alert: ^1.1.0
+
 
 dev_dependencies:
   flutter_test:
