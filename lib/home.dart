@@ -206,7 +206,7 @@ class _HomePageState extends State<HomePage> {
                           },
                           child: Center(
                             child: Text(
-                              'SHOW',
+                              'VIEW',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,

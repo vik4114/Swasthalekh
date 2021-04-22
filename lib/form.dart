@@ -129,7 +129,7 @@ class _FormPageState extends State<FormPage> {
                   TextField(
                     controller: _problem,
                     decoration: InputDecoration(
-                        labelText: 'Problem',
+                        labelText: 'Diagnosis',
                         labelStyle: TextStyle(
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,
@@ -141,7 +141,7 @@ class _FormPageState extends State<FormPage> {
                   TextField(
                     controller: _prescription,
                     decoration: InputDecoration(
-                        labelText: 'Prescription',
+                        labelText: 'Medication',
                         labelStyle: TextStyle(
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,
