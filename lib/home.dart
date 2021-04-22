@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
+import 'package:swasthalekh/EmergencyNumbers.dart';
 
 
 import 'package:swasthalekh/form.dart';
@@ -207,6 +208,32 @@ class _HomePageState extends State<HomePage> {
                           child: Center(
                             child: Text(
                               'VIEW',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat'),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 50.0),
+                    Container(
+                      height: 50.0,
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20.0),
+                        shadowColor: Colors.greenAccent,
+                        color: Colors.green,
+                        elevation: 7.0,
+                        child: FlatButton(
+                          splashColor: Colors.lightGreen,
+                          onPressed: () {
+
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => EmergencyPage()),);
+                          },
+                          child: Center(
+                            child: Text(
+                              'EMERGENCY NUMBERS',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,

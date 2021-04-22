@@ -97,11 +97,17 @@ class _MyHomePageState extends State<MyHomePage> {
           savePhone(map['phone']);
           Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(pasname: pasname.text,pasphone: pasphone.text,),));
         }
-      } else {
-        print("2");
-        print("Response Status: ${res.statusCode}");
-        print("Response body: ${res.body}");
-        Alert(context: context, title: "Email Id Password Doesn't match",style: alertStyle ).show();
+        else if(map['errorMessage']=="'Item'")
+          {
+            Alert(context: context, title: "Email Id doesn't exist Please Register",style: alertStyle ).show();
+          }
+        else {
+          print("2");
+          print("Response Status: ${res.statusCode}");
+          print("Response body: ${res.body}");
+          Alert(context: context, title: "Email Id & Password Doesn't match",style: alertStyle ).show();
+        }
+
       }
     }
     catch(e){

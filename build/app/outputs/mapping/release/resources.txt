@@ -3,6 +3,7 @@ Web content present: true
 Referenced Strings:
   %02d:%02d:%02d
   %02x
+  %23
   %s
   %s.%sParcelizer
   .flutter.image_provider
@@ -11,7 +12,6 @@ Referenced Strings:
   .mp4
   .xml
   /1
-  /file_picker/
   /proc/self/fd/
   /scaled_
   0
@@ -89,6 +89,7 @@ Referenced Strings:
   CREATED
   CUSTOM_ACTION
   CUT
+  Caller
   CameraOwnerName
   CameraSettingsIFDPointer
   ClickableViewAccessibility
@@ -148,9 +149,6 @@ Referenced Strings:
   FNumber
   FRAMEWORK_CLIENT
   FRONT
-  FilePicker
-  FilePickerDelegate
-  FilePickerUtils
   FileSource
   FitPolicy.BOTH
   FitPolicy.HEIGHT
@@ -297,6 +295,7 @@ Referenced Strings:
   MenuItemImpl
   MenuItemWrapper
   MenuPopupWindow
+  Message
   MeteringMode
   MethodCallHandlerImpl
   MissingSuperCall
@@ -323,7 +322,6 @@ Referenced Strings:
   ON_START
   ON_STOP
   OPACITY
-  ObsoleteSdkInt
   OffsetTime
   OffsetTimeDigitized
   OffsetTimeOriginal
@@ -548,7 +546,6 @@ Referenced Strings:
   YResolution
   _
   _LifecycleAdapter
-  _data
   _display_name
   _id
   _size
@@ -574,8 +571,6 @@ Referenced Strings:
   addressState
   alias
   allScroll
-  allowMultipleSelection
-  allowedExtensions
   alpha
   already_active
   alwaysUse24HourFormat
@@ -583,15 +578,12 @@ Referenced Strings:
   android.graphics.FontFamily
   android.graphics.Insets
   android.graphics.drawable.VectorDrawable
+  android.intent.action.CALL
   android.intent.action.GET_CONTENT
-  android.intent.action.OPEN_DOCUMENT_TREE
   android.intent.action.PROCESS_TEXT
   android.intent.action.RUN
   android.intent.action.SEARCH
   android.intent.action.VIEW
-  android.intent.category.OPENABLE
-  android.intent.extra.ALLOW_MULTIPLE
-  android.intent.extra.MIME_TYPES
   android.intent.extra.PROCESS_TEXT_REA...
   android.intent.extra.USE_FRONT_CAMERA
   android.intent.extra.durationLimit
@@ -629,7 +621,7 @@ Referenced Strings:
   android.media.metadata.USER_RATING
   android.media.metadata.WRITER
   android.media.metadata.YEAR
-  android.os.storage.StorageVolume
+  android.permission.CALL_PHONE
   android.permission.CAMERA
   android.permission.READ_EXTERNAL_STORAGE
   android.resource
@@ -674,12 +666,10 @@ Referenced Strings:
   announce
   anticipateInterpolator
   anticipateOvershootInterpolator
-  any
   app_data
   appcompat_skip_skip
   args
   arguments
-  audio
   autoMirrored
   autoSpacing
   autocorrect
@@ -703,11 +693,11 @@ Referenced Strings:
   bounceInterpolator
   c
   cached_engine_id
+  callNumber
   calling_package
   cameraDevice
   camera_access_denied
   canLaunch
-  cancel
   cell
   centerColor
   centerX
@@ -725,25 +715,18 @@ Referenced Strings:
   codePoint
   columns
   com.android.browser.headers
-  com.android.externalstorage.documents
   com.android.internal.view.menu.MenuBu...
-  com.android.providers.downloads.docum...
-  com.android.providers.media.documents
-  com.dropbox.android.FileCache
   com.erluxman.pdf_flutter.PdfFlutterPl...
-  com.google.android.apps.photos.content
   com.google.common.base.Strings
   com.shockwave.pdfium.PdfiumCore
   com.tekartik.sqflite
+  com.yanisalfian.flutterphonedirectcal...
   commit
   composingBase
   composingExtent
   computeFitSystemWindows
   config_showMenuShortcutsWhenKeyboardP...
   content
-  content://downloads/all_downloads
-  content://downloads/my_downloads
-  content://downloads/public_downloads
   contextMenu
   continueOnError
   controlX1
@@ -762,7 +745,6 @@ Referenced Strings:
   creditCardSecurityCode
   currentIndex
   currentPage
-  custom
   cycleInterpolator
   d
   dark
@@ -779,7 +761,6 @@ Referenced Strings:
   destroy_engine_with_activity
   deviceId
   dimen
-  dir
   direction
   display
   dispose
@@ -846,6 +827,7 @@ Referenced Strings:
   flutter_image_picker_pending_image_uri
   flutter_image_picker_shared_preference
   flutter_image_picker_type
+  flutter_phone_direct_caller
   font
   font_italic
   font_ttc_index
@@ -878,7 +860,6 @@ Referenced Strings:
   getLineSpacingMultiplier
   getMaxAvailableHeight
   getParentNodeId
-  getPath
   getPdfViewer
   getPlatformVersion
   getResId
@@ -890,8 +871,6 @@ Referenced Strings:
   getStorageDirectory
   getTemporaryDirectory
   getTextDirectionHeuristic
-  getUuid
-  getVolumeList
   givenName
   grab
   grabbing
@@ -921,7 +900,6 @@ Referenced Strings:
   installDeferredComponent
   intent_extra_data_key
   interpolator
-  invalid_format_type
   io.endigo.plugins.pdfviewflutter.PDFV...
   io.flutter.Entrypoint
   io.flutter.InitialRoute
@@ -930,7 +908,6 @@ Referenced Strings:
   io.flutter.embedding.android.OldGenHe...
   io.flutter.embedding.android.SplashSc...
   io.flutter.plugins.GeneratedPluginReg...
-  isPrimary
   isProjected
   item
   java.
@@ -951,7 +928,6 @@ Referenced Strings:
   light
   limit
   linearInterpolator
-  listen
   loadingUnitId
   logLevel
   longPress
@@ -967,7 +943,6 @@ Referenced Strings:
   maxDuration
   maxHeight
   maxWidth
-  media
   media_item
   memoryPressure
   menu
@@ -976,8 +951,6 @@ Referenced Strings:
   method
   middleInitial
   middleName
-  miguelruivo.flutter.plugins.filepicker
-  miguelruivo.flutter.plugins.filepicke...
   modft2
   modpdfium
   modpng
@@ -999,6 +972,7 @@ Referenced Strings:
   none
   null
   nullLayouts
+  number
   objectAnimator
   obscureText
   off
@@ -1046,6 +1020,7 @@ Referenced Strings:
   personName
   personNamePrefix
   personNameSuffix
+  phone
   phoneCountryCode
   phoneNational
   phoneNumber
@@ -1069,7 +1044,6 @@ Referenced Strings:
   postalCode
   precise
   preventLinkNavigation
-  primary
   primaryColor
   productId
   propertyName
@@ -1082,10 +1056,8 @@ Referenced Strings:
   query
   queryAsMapList
   r
-  raw:
   read
   readOnly
-  read_external_storage_denied
   recovered
   recoveredInTransaction
   registerWith
@@ -1156,7 +1128,6 @@ Referenced Strings:
   statusBarColor
   statusBarIconBrightness
   status_bar_height
-  storage
   streetAddress
   strokeAlpha
   strokeColor
@@ -1185,6 +1156,8 @@ Referenced Strings:
   tap
   target
   tekartik_sqflite.db
+  tel:
+  tel:%s
   telephoneNumber
   telephoneNumberCountryCode
   telephoneNumberDevice
@@ -1214,8 +1187,6 @@ Referenced Strings:
   type
   uninstallDeferredComponent
   uniqueIdentifier
-  unknown_activity
-  unknown_path
   unrated
   update
   updateSettings
@@ -1248,11 +1219,8 @@ Referenced Strings:
   yes
   zoomIn
   zoomOut
-Marking id:cancel_action:2131165252 used because its prefix matches string pool constant cancel
-Marking integer:cancel_button_image_alpha:2131230722 used because its prefix matches string pool constant cancel
 Marking id:message:2131165293 used because its prefix matches string pool constant message
 Marking styleable:SearchView:-1 used because its prefix matches string pool constant SearchView
-Marking id:media_actions:2131165292 used because its prefix matches string pool constant media
 Marking id:accessibility_action_clickable_span:2131165190 used because its prefix matches string pool constant accessibility
 Marking id:accessibility_custom_action_0:2131165191 used because its prefix matches string pool constant accessibility
 Marking id:accessibility_custom_action_1:2131165192 used because its prefix matches string pool constant accessibility
@@ -1403,14 +1371,6 @@ Marking attr:windowMinWidthMajor:2130837777 used because its prefix matches stri
 Marking attr:windowMinWidthMinor:2130837778 used because its prefix matches string pool constant window
 Marking attr:windowNoTitle:2130837779 used because its prefix matches string pool constant window
 Marking attr:itemPadding:2130837644 used because its prefix matches string pool constant item
-Marking color:primary_dark_material_dark:2130968639 used because its prefix matches string pool constant primary
-Marking color:primary_dark_material_light:2130968640 used because its prefix matches string pool constant primary
-Marking color:primary_material_dark:2130968641 used because its prefix matches string pool constant primary
-Marking color:primary_material_light:2130968642 used because its prefix matches string pool constant primary
-Marking color:primary_text_default_material_dark:2130968643 used because its prefix matches string pool constant primary
-Marking color:primary_text_default_material_light:2130968644 used because its prefix matches string pool constant primary
-Marking color:primary_text_disabled_material_dark:2130968645 used because its prefix matches string pool constant primary
-Marking color:primary_text_disabled_material_light:2130968646 used because its prefix matches string pool constant primary
 Marking attr:displayOptions:2130837604 used because its prefix matches string pool constant display
 Marking id:group_divider:2131165278 used because its prefix matches string pool constant group
 Marking attr:tooltipForegroundColor:2130837761 used because its prefix matches string pool constant tooltip
@@ -1467,10 +1427,6 @@ Marking id:contentPanel:2131165262 used because its prefix matches string pool c
 Marking styleable:ListPopupWindow:-1 used because its prefix matches string pool constant ListPopupWindow
 Marking attr:alpha:2130837543 used because its prefix matches string pool constant alpha
 Marking attr:alphabeticModifiers:2130837544 used because its prefix matches string pool constant alpha
-Marking attr:customNavigationLayout:2130837599 used because its prefix matches string pool constant custom
-Marking id:custom:2131165263 used because its prefix matches string pool constant custom
-Marking id:customPanel:2131165264 used because its prefix matches string pool constant custom
-Marking layout:custom_dialog:2131296284 used because its prefix matches string pool constant custom
 Marking attr:actionBarDivider:2130837504 used because its prefix matches string pool constant action
 Marking attr:actionBarItemBackground:2130837505 used because its prefix matches string pool constant action
 Marking attr:actionBarPopupTheme:2130837506 used because its prefix matches string pool constant action
@@ -2068,7 +2024,6 @@ attr:actionBarDivider:2130837504,
    attr:contentInsetRight:2130837594,
    attr:contentInsetStart:2130837595,
    attr:contentInsetStartWithNavigation:2130837596,
-   attr:customNavigationLayout:2130837599,
    attr:displayOptions:2130837604,
    attr:dropDownListViewStyle:2130837611,
    attr:font:2130837619,
@@ -2132,14 +2087,6 @@ attr:actionBarDivider:2130837504,
    color:background_material_light:2130968605,
    color:error_color_material_dark:2130968618,
    color:error_color_material_light:2130968619,
-   color:primary_dark_material_dark:2130968639,
-   color:primary_dark_material_light:2130968640,
-   color:primary_material_dark:2130968641,
-   color:primary_material_light:2130968642,
-   color:primary_text_default_material_dark:2130968643,
-   color:primary_text_default_material_light:2130968644,
-   color:primary_text_disabled_material_dark:2130968645,
-   color:primary_text_disabled_material_light:2130968646,
    color:tooltip_background_dark:2130968659,
    color:tooltip_background_light:2130968660,
    dimen:abc_action_bar_stacked_max_height:2131034121,
@@ -2260,15 +2207,12 @@ attr:actionBarDivider:2130837504,
    id:actions:2131165241,
    id:activity_chooser_view_content:2131165242,
    id:buttonPanel:2131165251,
-   id:cancel_action:2131165252,
    id:content:2131165261,
    id:contentPanel:2131165262,
-   id:custom:2131165263,
    id:customPanel:2131165264,
    id:edit_query:2131165269,
    id:group_divider:2131165278,
    id:image:2131165284,
-   id:media_actions:2131165292,
    id:message:2131165293,
    id:none:2131165297,
    id:search_badge:2131165313,
@@ -2297,7 +2241,6 @@ attr:actionBarDivider:2130837504,
    id:textSpacerNoTitle:2131165349,
    id:title:2131165351,
    id:topPanel:2131165355,
-   integer:cancel_button_image_alpha:2131230722,
    layout:abc_action_bar_title_item:2131296256,
    layout:abc_action_menu_item_layout:2131296258,
    layout:abc_action_menu_layout:2131296259,
@@ -2311,7 +2254,6 @@ attr:actionBarDivider:2130837504,
    layout:abc_search_dropdown_item_icons_2line:2131296280,
    layout:abc_search_view:2131296281,
    layout:abc_tooltip:2131296283,
-   layout:custom_dialog:2131296284,
    layout:support_simple_spinner_dropdown_item:2131296303,
    mipmap:ic_launcher:2131361792,
    string:abc_action_bar_up_description:2131427329,
@@ -2525,6 +2467,7 @@ Skipped unused resource res/layout/abc_screen_simple.xml: -1 bytes (replaced wit
 Skipped unused resource res/layout/abc_screen_simple_overlay_action_mode.xml: -1 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/abc_screen_toolbar.xml: -1 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout-v21/abc_screen_toolbar.xml: -1 bytes (replaced with small dummy file of size 104 bytes)
+Skipped unused resource res/layout/custom_dialog.xml: -1 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/notification_action.xml: -1 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout-v17/notification_action.xml: -1 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/notification_action_tombstone.xml: -1 bytes (replaced with small dummy file of size 104 bytes)

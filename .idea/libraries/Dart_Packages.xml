@@ -121,20 +121,6 @@
             </list>
           </value>
         </entry>
-        <entry key="file_picker">
-          <value>
-            <list>
-              <option value="D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/file_picker-1.13.3/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="file_picker_platform_interface">
-          <value>
-            <list>
-              <option value="D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/file_picker_platform_interface-1.3.1/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="flushbar">
           <value>
             <list>
@@ -160,6 +146,13 @@
           <value>
             <list>
               <option value="D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_pdfview-1.1.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="flutter_phone_direct_caller">
+          <value>
+            <list>
+              <option value="D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_phone_direct_caller-2.0.0/lib" />
             </list>
           </value>
         </entry>
@@ -603,11 +596,10 @@
       <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib" />
       <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-0.1.3/lib" />
       <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/file-5.2.1/lib" />
-      <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/file_picker-1.13.3/lib" />
-      <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/file_picker_platform_interface-1.3.1/lib" />
       <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flushbar-1.10.4/lib" />
       <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_cache_manager-2.1.2/lib" />
       <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_pdfview-1.1.0/lib" />
+      <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_phone_direct_caller-2.0.0/lib" />
       <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.11/lib" />
       <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_session-0.0.7/lib" />
       <root url="file://D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.12.2/lib" />
