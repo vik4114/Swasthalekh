@@ -243,15 +243,24 @@ class _SignupPageState extends State<SignupPage> {
                             String yea = formy.format(currentDate);
                             dob = day+'-'+mon+'-'+yea ;
                             print(dob);
-
-                            if(_email.text!=''&&_password.text!=''&&_name!=''&&_pnumber!='')
+                            if((_email.text).contains('@')==true&&(_email.text).contains('.')==true)
                               {
-                                signUp();
+                                print(_email.text);
+                                if(_email.text!=''&&_password.text!=''&&_name!=''&&_pnumber!='')
+                                {
+                                  signUp();
+                                }
+                                else
+                                {
+                                  showPrintedMessage('Error', 'Please fill all details');
+                                }
                               }
                             else
                               {
-                                showPrintedMessage('Error', 'Please fill all details');
+                                showPrintedMessage('Error', 'Email is not correct');
                               }
+
+
 
 
                           },
