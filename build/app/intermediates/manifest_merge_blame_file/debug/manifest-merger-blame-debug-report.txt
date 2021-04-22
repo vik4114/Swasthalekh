@@ -15,8 +15,8 @@
 14-->C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\debug\AndroidManifest.xml:6:5-66
 14-->C:\Users\bhvik\AndroidStudioProjects\swasthalekh\android\app\src\debug\AndroidManifest.xml:6:22-64
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->[:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
-15-->[:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+15-->[:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+15-->[:file_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
 16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 16-->[:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
 16-->[:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
@@ -118,6 +118,15 @@
 79                android:resource="@xml/flutter_image_picker_file_paths" />
 79-->[:image_picker] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
 80        </provider>
-81    </application>
-82
-83</manifest>
+81
+82        <activity
+82-->[:url_launcher] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+83            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+83-->[:url_launcher] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+84            android:exported="false"
+84-->[:url_launcher] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+85            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+85-->[:url_launcher] C:\Users\bhvik\AndroidStudioProjects\swasthalekh\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+86    </application>
+87
+88</manifest>

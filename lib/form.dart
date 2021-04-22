@@ -1,9 +1,13 @@
+import 'dart:async';
+
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/services.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
+
 import 'package:swasthalekh/Scanner.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 
 
@@ -24,11 +28,7 @@ class _FormPageState extends State<FormPage> {
   final TextEditingController _problem = TextEditingController();
   final TextEditingController _prescription = TextEditingController();
 
-  String date ;
-
-
-
-
+  String _date;
   DateTime currentDate = DateTime.now();
   DateFormat formatter = DateFormat.yMMMd();
   Future<void> _selectDate(BuildContext context) async {
@@ -52,7 +52,7 @@ class _FormPageState extends State<FormPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        resizeToAvoidBottomPadding: false,
+        resizeToAvoidBottomInset: false,
         body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
             Widget>[
           Container(
@@ -157,17 +157,29 @@ class _FormPageState extends State<FormPage> {
                         shadowColor: Colors.greenAccent,
                         color: Colors.green,
                         elevation: 7.0,
-                        child: GestureDetector(
-                          onTap: () {
-                            String day = DateFormat('dd').format(currentDate);
-                            String mon = DateFormat('mm').format(currentDate);
-                            String yea = DateFormat('y').format(currentDate);
+                        // ignore: deprecated_member_use
+                        child: FlatButton(
+                          splashColor: Colors.lightGreen,
+                          onPressed: () {
+                            DateFormat formd = DateFormat.d();
+                            DateFormat formm = DateFormat.M();
+                            DateFormat formy = DateFormat.y();
 
-                            date = day+'-'+mon+'-'+yea ;
-                            print(date);
+                            String day = formd.format(currentDate);
+                            String mon = formm.format(currentDate);
+                            String yea = formy.format(currentDate);
+                            _date = day+'-'+mon+'-'+yea ;
 
-                            if(_doctor.text!=''&&_problem!=''&&_prescription!='')
+                            print(_date);
+
+                            if(_doctor.text!=''&&_problem.text!=''&&_prescription.text!='')
                             {
+
+                              savefName(_doctor.text);
+                              saveProblem(_problem.text);
+                              savePresciption(_prescription.text);
+                              saveDate(_date);
+
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => Scanner()),
@@ -182,7 +194,7 @@ class _FormPageState extends State<FormPage> {
                           },
                           child: Center(
                             child: Text(
-                              'Proceed',
+                              'Upload',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -236,4 +248,45 @@ class _FormPageState extends State<FormPage> {
       ),
     )..show(context);
   }
+}
+Future<bool> savefName(String fname) async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString("fname", fname);
+  return prefs.commit(); // ignore: deprecated_member_use
+}
+Future<String> getfName() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String fname = prefs.getString("fname");
+  return fname;
+}
+Future<bool> saveProblem(String problem) async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString("problem", problem);
+  // ignore: deprecated_member_use
+  return prefs.commit();
+}
+Future<String> getProblem() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String problem = prefs.getString("problem");
+  return problem;
+}
+Future<bool> savePresciption(String presciption) async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString("presciption", presciption);
+  return prefs.commit(); // ignore: deprecated_member_use
+}
+Future<String> getPresciption() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String presciption = prefs.getString("presciption");
+  return presciption;
+}
+Future<bool> saveDate(String date) async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString("date", date);
+  return prefs.commit(); // ignore: deprecated_member_use
+}
+Future<String> getDate() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String date = prefs.getString("date");
+  return date;
 }

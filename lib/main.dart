@@ -1,10 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:swasthalekh/home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'signup.dart';
 
@@ -32,6 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
+
+
+
   @override
     void initState(){
       super.initState();
@@ -74,8 +79,9 @@ class _MyHomePageState extends State<MyHomePage> {
     final pasname = new TextEditingController();
     final pasphone = new TextEditingController();
 
+
     print(bo);
-    var jsonResponse;
+
     var res = await http.post(url, body: bo);
     print(res.body);
     try {
@@ -87,6 +93,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
         print("Response Status: ${res.statusCode}");
         if (map['result']=="true") {
+          saveName(map['name']);
+          savePhone(map['phone']);
           Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(pasname: pasname.text,pasphone: pasphone.text,),));
         }
       } else {
@@ -105,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        resizeToAvoidBottomPadding: false,
+        resizeToAvoidBottomInset: false,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -150,21 +158,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               borderSide: BorderSide(color: Colors.green))),
                       obscureText: true,
                     ),
-                    SizedBox(height: 5.0),
-                    Container(
-                      alignment: Alignment(1.0, 0.0),
-                      padding: EdgeInsets.only(top: 15.0, left: 20.0),
-                      child: InkWell(
-                        child: Text(
-                          'Forgot Password',
-                          style: TextStyle(
-                              color: Colors.green,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Montserrat',
-                              decoration: TextDecoration.underline),
-                        ),
-                      ),
-                    ),
                     SizedBox(height: 40.0),
                     Container(
                       height: 40.0,
@@ -173,8 +166,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         shadowColor: Colors.greenAccent,
                         color: Colors.green,
                         elevation: 7.0,
-                        child: GestureDetector(
-                          onTap: () {
+                        // ignore: deprecated_member_use
+                        child: FlatButton(
+                          splashColor: Colors.lightGreen,
+                          onPressed: () {
                             if(_email.text!=''&&_password.text!='')
                             {
                               login();
@@ -228,4 +223,28 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ));
   }
+
+
+}
+Future<bool> saveName(String name) async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString("name", name);
+  // ignore: deprecated_member_use
+  return prefs.commit();
+}
+Future<String> getName() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String name = prefs.getString("name");
+  return name;
+}
+Future<bool> savePhone(String phone) async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString("phone", phone);
+  // ignore: deprecated_member_use
+  return prefs.commit();
+}
+Future<String> getPhone() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String phone = prefs.getString("phone");
+  return phone;
 }

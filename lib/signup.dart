@@ -1,10 +1,12 @@
+import 'dart:async';
+
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/services.dart';
-import 'package:swasthalekh/home.dart';
+
 import 'package:http/http.dart' as http;
-import 'package:rflutter_alert/rflutter_alert.dart';
+
 import 'dart:convert';
 
 import 'package:swasthalekh/main.dart';
@@ -41,12 +43,11 @@ class _SignupPageState extends State<SignupPage> {
         'password': _password.text,
         'phone': _pnumber.text,
          'name' : _name.text,
-          'dob' : dob,
+        'dob' : dob,
     };
     String bo = json.encode(bod);
 
     print(bo);
-    var jsonResponse;
     var res = await http.post(url, body: bo);
     print(res.body);
     try {
@@ -104,14 +105,14 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        resizeToAvoidBottomPadding: false,
+        resizeToAvoidBottomInset: false,
         body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
             Widget>[
           Container(
             child: Stack(
               children: <Widget>[
                 Container(
-                  padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
+                  padding: EdgeInsets.fromLTRB(15.0, 50.0, 0.0, 0.0),
                   child: Text(
                     'Signup',
                     style:
@@ -119,7 +120,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(260.0, 125.0, 0.0, 0.0),
+                  padding: EdgeInsets.fromLTRB(260.0, 65.0, 0.0, 0.0),
                   child: Text(
                     '.',
                     style: TextStyle(
@@ -230,11 +231,16 @@ class _SignupPageState extends State<SignupPage> {
                         shadowColor: Colors.greenAccent,
                         color: Colors.green,
                         elevation: 7.0,
-                        child: GestureDetector(
-                          onTap: () {
-                            String day = DateFormat('dd').format(currentDate);
-                            String mon = DateFormat('mm').format(currentDate);
-                            String yea = DateFormat('y').format(currentDate);
+                        child: FlatButton( // ignore: deprecated_member_use
+                          splashColor: Colors.lightGreen,
+                          onPressed: () {
+                            DateFormat formd = DateFormat.d();
+                            DateFormat formm = DateFormat.M();
+                            DateFormat formy = DateFormat.y();
+
+                            String day = formd.format(currentDate);
+                            String mon = formm.format(currentDate);
+                            String yea = formy.format(currentDate);
                             dob = day+'-'+mon+'-'+yea ;
                             print(dob);
 

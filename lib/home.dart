@@ -1,10 +1,13 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 
-import 'package:swasthalekh/Scanner.dart';
+
 import 'package:swasthalekh/form.dart';
 import 'package:swasthalekh/main.dart';
+import 'package:swasthalekh/show.dart';
 
 
 
@@ -27,8 +30,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState(){
+
     _items = _generateItems;
     _headline = _items.firstWhere((item) => item.isSelected).text;
+    getName().then(updateName);
+    getPhone().then(updatePhone);
     super.initState();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp
@@ -78,9 +84,12 @@ class _HomePageState extends State<HomePage> {
 
     ];
   }
+  String _name="";
+  String _phone="";
 
   @override
   Widget build(BuildContext context) {
+
 
     return Container(
       color: Colors.green,
@@ -88,8 +97,7 @@ class _HomePageState extends State<HomePage> {
           child: Center(
             child: CollapsibleSidebar(
               items: _items,
-              avatarImg: _avatarImg,
-              title: pasname,
+              title: _name,
               height: double.infinity,
               body: _body(context),
               backgroundColor: Colors.white,
@@ -116,7 +124,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _body( BuildContext context) {
     return new Scaffold(
-        resizeToAvoidBottomPadding: false,
+        resizeToAvoidBottomInset: false,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -161,8 +169,9 @@ class _HomePageState extends State<HomePage> {
                         shadowColor: Colors.greenAccent,
                         color: Colors.green,
                         elevation: 7.0,
-                        child: GestureDetector(
-                          onTap: () {
+                        child: FlatButton(
+                          splashColor: Colors.lightGreen,
+                          onPressed: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => FormPage()),
@@ -188,10 +197,12 @@ class _HomePageState extends State<HomePage> {
                         shadowColor: Colors.greenAccent,
                         color: Colors.green,
                         elevation: 7.0,
-                        child: GestureDetector(
-                          onTap: () {
-                            print(pasphone);
-                            print(pasname);
+                        child: FlatButton(
+                          splashColor: Colors.lightGreen,
+                          onPressed: () {
+                            print(_phone);
+                            print(_name);
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => Showpage()),);
                           },
                           child: Center(
                             child: Text(
@@ -218,4 +229,16 @@ class _HomePageState extends State<HomePage> {
   }
 
 
+
+  void updateName(String name) {
+    setState(() {
+      this._name= name;
+    });
+  }
+
+  void updatePhone(String phone) {
+    setState(() {
+      this._phone=phone;
+    });
+  }
 }
