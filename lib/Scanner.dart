@@ -60,7 +60,7 @@ class _ScannerState extends State<Scanner> {
   _imgFromCamera() async {
     // ignore: deprecated_member_use
     File image = await ImagePicker.pickImage(
-        source: ImageSource.camera, imageQuality: 50
+        source: ImageSource.camera, imageQuality: 25
     );
 
     setState(() {
@@ -75,7 +75,7 @@ class _ScannerState extends State<Scanner> {
   _imgFromGallery() async {
     // ignore: deprecated_member_use
     File image = await  ImagePicker.pickImage(
-        source: ImageSource.gallery, imageQuality: 50
+        source: ImageSource.gallery, imageQuality: 25
     );
 
     setState(() {
@@ -197,7 +197,7 @@ class _ScannerState extends State<Scanner> {
 
   savePDF(String formattedDate) async {
     try {
-      final dir = await getExternalStorageDirectory();
+      final dir = await getTemporaryDirectory();
       final file = File('${dir.path}/$formattedDate.pdf');
       await file.writeAsBytes(await pdf.save());
 
@@ -236,7 +236,7 @@ class _ScannerState extends State<Scanner> {
       var data1 = json.decode(res.body);
 
       print(data1['body']);
-      final dir = await getExternalStorageDirectory();
+      final dir = await getTemporaryDirectory();
       final file = File('${dir.path}/$formattedDate.pdf');
       String path =dir.path+'/'+formattedDate+'.pdf';
       print(file);

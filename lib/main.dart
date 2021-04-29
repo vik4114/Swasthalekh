@@ -1,9 +1,11 @@
 import 'dart:async';
 
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:swasthalekh/home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -37,9 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
+
   @override
     void initState(){
+
       super.initState();
+
       SystemChrome.setPreferredOrientations([
         DeviceOrientation.portraitUp
       ]);

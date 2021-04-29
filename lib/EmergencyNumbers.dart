@@ -19,7 +19,7 @@ class EmergencyPage extends StatefulWidget {
 
 class _EmergencyPageState extends State<EmergencyPage> {
 
-
+  String number;
 
 
   @override
@@ -29,17 +29,66 @@ class _EmergencyPageState extends State<EmergencyPage> {
       DeviceOrientation.portraitUp
     ]);
   }
+  var alertStyle = AlertStyle(
+    animationType: AnimationType.fromTop,
+    isCloseButton: true,
+    isButtonVisible: false ,
+    isOverlayTapDismiss: true,
+    animationDuration: Duration(milliseconds: 400),
+    backgroundColor: Colors.lightGreen,
+    alertBorder: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(20),
+      side: BorderSide(
+        width: 4,
+        color: Colors.black54,
+      ),
+    ),
+    titleStyle: TextStyle(
+        fontFamily: 'Montserrat',
+        fontWeight: FontWeight.bold,
+        color: Colors.black54
+    ),
+  );
+  getNumber(String Number) async {
+    String url = "https://wzb44b7qsc.execute-api.ap-south-1.amazonaws.com/production/getnumber";
 
+
+    var bod = {
+
+      'number': Number,
+    };
+    String bo = json.encode(bod);
+
+
+    print(bo);
+
+    var res = await http.post(url, body: bo);
+    print(res.body);
+    try {
+
+      if (res.statusCode == 200) {
+
+        Map<String, dynamic> map=json.decode(res.body);
+        number=map['body'];
+        print(map['body']);
+
+      }
+    }
+    catch(e){
+      print (e);
+      Alert(context: context, title: "Something went Wrong Try Again ",style: alertStyle).show();
+    }
+  }
   _callNumber1() async{
-    const number = '7406921823'; //set the number here
+    await getNumber("number1");
     bool res = await FlutterPhoneDirectCaller.callNumber(number);
   }
   _callNumber2() async{
-    const number = '9494055750'; //set the number here
+    await getNumber("number2");
     bool res = await FlutterPhoneDirectCaller.callNumber(number);
   }
   _callNumber3() async{
-    const number = '6361679415'; //set the number here
+    await getNumber("number3");
     bool res = await FlutterPhoneDirectCaller.callNumber(number);
   }
 
