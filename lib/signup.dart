@@ -164,6 +164,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   SizedBox(height: 10.0),
                   TextField(
+                    inputFormatters: [ FilteringTextInputFormatter.allow(RegExp("[a-zA-Z ]")), ],
                     controller: _name,
                     decoration: InputDecoration(
                         labelText: 'NAME',
@@ -213,6 +214,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   SizedBox(height: 10.0),
                   TextField(
+                    inputFormatters: [ FilteringTextInputFormatter.allow(RegExp("[0-9 ]")), ],
                     controller: _pnumber,
                     decoration: InputDecoration(
                         labelText: 'PHONE NO. ',
@@ -245,15 +247,29 @@ class _SignupPageState extends State<SignupPage> {
                             print(dob);
                             if((_email.text).contains('@')==true&&(_email.text).contains('.')==true)
                               {
-                                print(_email.text);
-                                if(_email.text!=''&&_password.text!=''&&_name!=''&&_pnumber!='')
-                                {
-                                  signUp();
+
+                                if((_password.text).contains(new RegExp(r'[!@#$%^&*(),.?":{}|<>]'))&&(_password.text).contains(new RegExp(r'[0-9]'))){
+                                  if((_password.text).length>=8)
+                                    {
+                                      if(_email.text!=''&&_password.text!=''&&_name.text!=''&&_pnumber.text!='')
+                                      {
+                                        signUp();
+                                      }
+                                      else
+                                      {
+                                        showPrintedMessage('Error', 'Please fill all details');
+                                      }
+                                    }
+                                  else
+                                    {
+                                      showPrintedMessage('Error', 'Password must be 8 or more characters');
+                                    }
+
                                 }
                                 else
-                                {
-                                  showPrintedMessage('Error', 'Please fill all details');
-                                }
+                                  {
+                                    showPrintedMessage('Error', 'Password must contain atleast one special character and one number');
+                                  }
                               }
                             else
                               {

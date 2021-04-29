@@ -97,6 +97,7 @@ class _HomePageState extends State<HomePage> {
       child: SafeArea(
           child: Center(
             child: CollapsibleSidebar(
+
               items: _items,
               title: _name,
               height: double.infinity,
