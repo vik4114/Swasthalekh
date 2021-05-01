@@ -1,4 +1,4 @@
-#Thu Apr 29 17:16:02 IST 2021
+#Thu Apr 29 18:38:50 IST 2021
 base.0=C\:\\Users\\bhvik\\AndroidStudioProjects\\swasthalekh\\build\\app\\intermediates\\transforms\\r8\\release\\0\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
