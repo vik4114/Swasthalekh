@@ -1,4 +1,4 @@
-# swasthalekh
+#SwasthaLekh
 
 The health tracker has many benefits for both patients and healthcare providers. It removes the need for patients to store and hold paper notes every time they visit a doctor. They will basically take their entire medical history with them everywhere they go with the digital medical record.
 
