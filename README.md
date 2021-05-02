@@ -8,15 +8,3 @@ Once adopted, this will serve as a seamless communication platform whenever a pa
 
 This project is a tiny, yet concrete step towards total digitization and unifying the entire medical and healthcare system of a large population. A tremendous amount of needless inconvenience and suffering can be eliminated by ensuring that health records are universally available. India too, needs a individualized digital record that is comprehensive, user friendly, easy to learn and use to make patient healthcare safe and secure. Standardizing such a healthcare system with comprehensive documentation of patients will go a long way in moving hand in hand with the established health scenario, and saving lives. 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
